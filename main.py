@@ -1,6 +1,9 @@
 from data_loader import load_dual_dataset
 from preprocessor import apply_preprocessing
 from vectorizer import vectorize_text
+from trainer_nb import train_naive_bayes
+from evaluator import evaluate_model
+from sklearn.model_selection import train_test_split
 
 # Troque os caminhos para testar outros datasets (ex: ISOT/...)
 ISOT_true_dataset = "ISOT Fake News Dataset/True.csv"
@@ -30,9 +33,7 @@ if __name__ == "__main__":
     print("\n🧹 Primeiras linhas do texto limpo (pré-processado):")
     print(df[["label", "text_clean"]].head())
 
-    print(f"\n🔢 Forma da matriz TF-IDF: {X.shape}")
-    print("👉 Cada linha é um texto. Cada coluna é uma palavra.")
-
+    #show vetorization example
     print("\n🔍 Exemplo de vetorização TF-IDF das 5 primeiras notícias:\n")
 
     feature_names = vectorizer.get_feature_names_out()
@@ -49,3 +50,9 @@ if __name__ == "__main__":
             palavra = feature_names[idx]
             peso = row[idx]
             print(f"  {palavra}: {peso:.4f}")
+    
+    #application of NB
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
+
+    model = train_naive_bayes(X_train, y_train)
+    evaluate_model(model, X_test, y_test)
