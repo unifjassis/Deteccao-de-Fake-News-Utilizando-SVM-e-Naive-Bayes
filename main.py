@@ -4,6 +4,10 @@ from vectorizer import vectorize_text
 from trainer_nb import train_naive_bayes
 from evaluator import evaluate_model
 from sklearn.model_selection import train_test_split
+from trainer_svm import train_svm
+from comparator import evaluate_and_compare
+from comparator import cross_validate_models
+
 
 # Troque os caminhos para testar outros datasets (ex: ISOT/...)
 ISOT_true_dataset = "ISOT Fake News Dataset/True.csv"
@@ -56,3 +60,30 @@ if __name__ == "__main__":
 
     model = train_naive_bayes(X_train, y_train)
     evaluate_model(model, X_test, y_test)
+
+    #application of SVM
+    print("\n🚀 Treinando modelo SVM...")
+    svm_model = train_svm(X_train, y_train)
+    evaluate_model(svm_model, X_test, y_test)
+
+    #compare models
+    nb_model = train_naive_bayes(X_train, y_train)
+    svm_model = train_svm(X_train, y_train)
+
+    evaluate_and_compare(
+        models=[nb_model, svm_model],
+        model_names=["Naive Bayes", "SVM"],
+        X_test=X_test,
+        y_test=y_test
+    )
+
+    from sklearn.naive_bayes import MultinomialNB
+    from sklearn.svm import LinearSVC
+    #cross validation
+    cross_validate_models(
+        models=[MultinomialNB(), LinearSVC()],
+        model_names=["Naive Bayes", "SVM"],
+        X=X,
+        y=y,
+        cv=5
+    )
