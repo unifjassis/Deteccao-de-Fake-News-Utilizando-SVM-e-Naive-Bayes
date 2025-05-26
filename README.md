@@ -41,16 +41,6 @@ fake_news_classifier/
 6. Validação cruzada com 5-fold
 7. Geração de gráfico comparativo
 
-## 🚀 Como executar
-
-```bash
-# Instale as dependências
-pip install -r requirements.txt
-
-# Execute o pipeline principal
-python main.py
-
-
 📚 Dataset utilizado
 ISOT Fake News Dataset - Kaggle
 
@@ -63,3 +53,14 @@ Acurácia: 0.945
 Precisão: 0.94
 Recall:   0.95
 F1-score: 0.945
+
+## 🚀 Como executar
+
+```bash
+# Instale as dependências
+pip install -r requirements.txt
+
+# Execute o pipeline principal
+python main.py
+
+
