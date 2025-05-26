@@ -12,21 +12,21 @@ Este projeto tem como objetivo detectar **notícias falsas** utilizando **algori
 
 ## 📁 Estrutura do Projeto
 
-fake_news_classifier/
-├── data/ # Datasets originais
-│ └── ISOT/
-│ ├── True.csv
-│ └── Fake.csv
-├── src/ # Módulos principais
-│ ├── data_loader.py
-│ ├── preprocessor.py
-│ ├── vectorizer.py
-│ ├── trainer_nb.py
-│ ├── trainer_svm.py
-│ ├── evaluator.py
-│ └── comparator.py
-├── main.py # Pipeline principal
-└── requirements.txt # Dependências
+fake_news_classifier/  
+├── data/ # Datasets originais  
+│ └── ISOT/  
+│ ├── True.csv  
+│ └── Fake.csv  
+├── src/ # Módulos principais  
+│ ├── data_loader.py  
+│ ├── preprocessor.py  
+│ ├── vectorizer.py  
+│ ├── trainer_nb.py  
+│ ├── trainer_svm.py  
+│ ├── evaluator.py  
+│ └── comparator.py  
+├── main.py # Pipeline principal  
+└── requirements.txt # Dependências  
 
 
 ## 📊 Etapas do pipeline
@@ -41,14 +41,12 @@ fake_news_classifier/
 6. Validação cruzada com 5-fold
 7. Geração de gráfico comparativo
 
-📚 Dataset utilizado
+## 📚 Dataset utilizado  
 ISOT Fake News Dataset - Kaggle
 
 
-📈 Exemplo de saída
-makefile
-Copiar
-Editar
+## 📈 Exemplo de saída  
+
 Acurácia: 0.945
 Precisão: 0.94
 Recall:   0.95
@@ -62,5 +60,3 @@ pip install -r requirements.txt
 
 # Execute o pipeline principal
 python main.py
-
-
