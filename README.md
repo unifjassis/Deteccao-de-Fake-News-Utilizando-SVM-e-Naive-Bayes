@@ -41,16 +41,16 @@ fake_news_classifier/
 6. Validação cruzada com 5-fold
 7. Geração de gráfico comparativo
 
-## 📚 Dataset utilizado  
-ISOT Fake News Dataset - Kaggle
+## 📚 Dataset utilizado
+- [ISOT Fake News Detection Dataset (Kaggle)](https://www.kaggle.com/datasets/emineyetm/fake-news-detection-datasets)
 
 
 ## 📈 Exemplo de saída  
 
-Acurácia: 0.945
-Precisão: 0.94
-Recall:   0.95
-F1-score: 0.945
+Acurácia: 0.945  
+Precisão: 0.94  
+Recall:   0.95  
+F1-score: 0.945  
 
 ## 🚀 Como executar
 
