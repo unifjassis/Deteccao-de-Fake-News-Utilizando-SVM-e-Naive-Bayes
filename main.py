@@ -56,6 +56,7 @@ if __name__ == "__main__":
             print(f"  {palavra}: {peso:.4f}")
     
     #application of NB
+    print("\n🚀 Treinando modelo Naive Bayes...")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
     model = train_naive_bayes(X_train, y_train)
