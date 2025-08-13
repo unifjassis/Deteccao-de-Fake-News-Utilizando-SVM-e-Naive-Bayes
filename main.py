@@ -59,13 +59,15 @@ if __name__ == "__main__":
     print("\n🚀 Treinando modelo Naive Bayes...")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-    model = train_naive_bayes(X_train, y_train)
-    evaluate_model(model, X_test, y_test)
+    nb_model = train_naive_bayes(X_train, y_train)
+    # Avaliar Naive Bayes
+    evaluate_model(nb_model, X_test, y_test, "NaiveBayes")
 
     #application of SVM
     print("\n🚀 Treinando modelo SVM...")
     svm_model = train_svm(X_train, y_train)
-    evaluate_model(svm_model, X_test, y_test)
+    # Avaliar SVM
+    evaluate_model(svm_model, X_test, y_test, "SVM")
 
     #compare models
     nb_model = train_naive_bayes(X_train, y_train)
